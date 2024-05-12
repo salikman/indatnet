@@ -1,0 +1,58 @@
+.pd {
+  background: radial-gradient(74.32% 74.32% at 49.03% 27.56%, #17253F 0%, #010101 49%, #101B2F 100%);
+  
+  &-wrapper {
+    padding: rem(100) 0;
+
+    @include media-mx(991) {
+      padding: rem(50) 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(50);
+    @include adaptiv-font(55, 40);
+    
+    @include media-mx(991) {
+      @include text-gradient(linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%));
+      font-weight: 700;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(rem(300), 1fr));
+    gap: rem(55);
+
+    @include media-mx(991){
+      gap: rem(30);
+    }
+    @include media-mx(475){
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+
+      i {
+        width: max-content;
+        @include text-gradient(linear-gradient(88.95deg, #29CCB9 0%, #0091FF 50%, #FF66B7 100%));
+        @include adaptiv-font(55, 40);
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      span {
+        color: var(--primary-color);
+        @include adaptiv-font(30, 20);
+      }
+
+      p {
+        @include adaptiv-font(18, 16);
+        line-height: 1.4;
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+.goals {
+  background: radial-gradient(74.32% 74.32% at 49.03% 27.56%, #17253F 0%, #010101 49%, #101B2F 100%);
+  
+  &-wrapper {
+    padding: rem(100) 0;
+
+    @include media-mx(991) {
+      padding: rem(50) 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(30);
+    @include adaptiv-font(55, 40);
+    
+    @include media-mx(991) {
+      @include text-gradient(linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%));
+      font-weight: 700;
+    }
+  }
+
+  &-tabs {
+    .tabs__nav {
+      @include media-mx(991) {
+        
+      }
+    }
+    .tabs__content {
+      width: 100%;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+
+        @include adaptiv-font(18, 16);
+        line-height: 1.4;
+
+        a {
+          color: var(--primary-color);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .progress-bar {
+    &__title {
+      padding-left: rem(330);
+      @include adaptiv-font(30, 20);
+      line-height: 1.2;
+
+      @include media-mx(767) {
+        padding-left: 0;
+        font-weight: 700;
+      }
+
+      &.red {
+        color: #FF8484;
+      }
+      &.blue {
+        color: #00A3FF;
+      }
+    }
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      gap: rem(15);
+  
+      &.red {
+        .bar_left {
+          color: #FF8484;
+        }
+        .bar_right {
+          color: #A50404;
+        }
+        .bar_center {
+          background: #720000;
+  
+          span {
+            background: #EB5757;
+          }
+        }
+      }
+
+      &.blue {
+        .bar_left {
+          color: #3FBAFF;
+        }
+        .bar_right {
+          color: #0257BA;
+        }
+        .bar_center {
+          background: #003470;
+  
+          span {
+            background: #00A3FF;
+          }
+        }
+      }
+  
+      .bar {
+        display: grid;
+        grid-template-columns: minmax(rem(200), rem(290)) 1fr minmax(rem(250), rem(300));
+        gap: rem(40);
+        width: 100%;
+
+        @include media-mx(1366) {
+          gap: rem(20);
+        }
+        @include media-mx(991) {
+          grid-template-columns: minmax(rem(200), rem(290)) 1fr;
+        }
+        @include media-mx(767) {
+          grid-template-columns: 1fr;
+          gap: rem(10);
+        }
+  
+        &_left {
+          text-align: right;
+          @include adaptiv-font(18, 16);
+
+          @include media-mx(767) {
+            text-align: left;
+          }
+        }
+  
+        &_center {
+          height: rem(15);
+  
+          span {
+            display: flex;
+            justify-content: center;
+            width: 0;
+            height: 100%;
+            font-size: rem(14);
+            font-weight: 500;
+          }
+        }
+  
+        &_right {
+          text-align: left;
+          @include adaptiv-font(18, 16);
+
+          @include media-mx(991) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

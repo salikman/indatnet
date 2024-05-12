@@ -1,0 +1,45 @@
+.wg {
+  background: radial-gradient(74.32% 74.32% at 49.03% 27.56%, #17253F 0%, #010101 49%, #101B2F 100%);
+
+  &-wrapper {
+    padding: rem(100) 0;
+  }
+
+  &__title {
+    margin-bottom: rem(50);
+    @include adaptiv-font(55, 40);
+    
+    @include media-mx(991) {
+      @include text-gradient(linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%));
+      font-weight: 700;
+    }
+  }
+
+  &__text {
+    margin-bottom: rem(30);
+    @include adaptiv-font(18, 16);
+    line-height: 1.4;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+
+      span {
+        color: var(--primary-color);
+        @include adaptiv-font(30, 20);
+      }
+
+      p {
+        @include adaptiv-font(18, 16);
+        line-height: 1.4;
+      }
+    }
+  }
+}

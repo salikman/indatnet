@@ -1,0 +1,33 @@
+@font-face {
+	font-family: ClashDisplay;
+	font-display: swap;
+	src: url("../fonts/ClashDisplay-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: ClashDisplay;
+	font-display: swap;
+	src: url("../fonts/ClashDisplay-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: ClashDisplay;
+	font-display: swap;
+	src: url("../fonts/ClashDisplay-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: ClashDisplay;
+	font-display: swap;
+	src: url("../fonts/ClashDisplay-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');

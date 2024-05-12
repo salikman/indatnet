@@ -1,0 +1,203 @@
+.idn {
+  background: radial-gradient(74.32% 74.32% at 49.03% 27.56%, #17253F 0%, #010101 49%, #101B2F 100%);
+  
+  &-wrapper {
+    padding: rem(100) 0;
+
+    @include media-mx(991) {
+      padding: rem(50) 0;
+    }
+  }
+
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    margin-bottom: rem(100);
+
+    @include media-mx(1239) {
+      align-items: center;
+    }
+    @include media-mx(767) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &_img {
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16/10;
+    }
+
+    @include media-mx(767) {
+      display: none;
+    }
+  }
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include adaptiv-font(55, 40);
+    @include text-gradient(linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%));
+    font-weight: 700;
+
+    @include media-mx(991) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: rem(30);
+    @include adaptiv-font(18, 15);
+    font-weight: 700;
+  }
+
+  &__description {
+    margin-bottom: rem(30);
+    @include adaptiv-font(18, 16);
+    line-height: 1.4;
+
+    @include media-mn(768) {
+      max-width: rem(380);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    // gap: rem(5);
+    width: max-content;
+    padding: rem(20) rem(40);
+    background: linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%);
+    border-radius: rem(50);
+
+    @include media-mx(767) {
+      margin: auto;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: calc(100% - rem(12));
+      height: calc(100% - rem(10));
+      border: rem(1) solid white;
+      border-radius: rem(50);
+    }
+
+    img {
+      width: rem(30);
+      height: rem(30);
+      object-fit: cover;
+    }
+
+    span {
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: rem(14);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+    gap: rem(36);
+
+    @include media-mx(767) {
+      grid-template-columns: 1fr;
+      gap: rem(30);
+    }
+
+    .item {
+      display: flex;
+      gap: rem(10);
+      padding-left: 10px;
+      background: #111C2F;
+      border-radius: rem(20);
+
+      @include media-mx(768) {
+        gap: rem(15);
+        padding: rem(30) rem(10);
+        background: #070B11;
+      }
+
+      &_img {
+        width: rem(80);
+
+        @include media-mn(768) {
+          margin-top: rem(-20);
+        }
+        @include media-mx(767) {
+          width: rem(50);
+        }
+
+        img {
+          width: 100%;
+          height: rem(70);
+          object-fit: contain;
+        }
+      }
+
+      &_text {
+        display: flex;
+        flex-direction: column;
+        gap: rem(15);
+        flex: 1;
+
+        @include media-mn(768) {
+          padding: rem(30) rem(20);
+          padding-left: 0;
+        }
+      }
+
+      &__title {
+        @include adaptiv-font(18, 16);
+        @include text-gradient(linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%));
+        font-weight: 700;
+      }
+
+      &__description {
+        @include adaptiv-font(18, 16);
+        line-height: 1.4;
+      }
+
+      &__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        height: rem(40);
+        padding: rem(10);
+        margin: rem(1);
+        text-transform: uppercase;
+        color: white;
+
+        &:before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 50px;
+          padding: rem(1); /* control the border thickness */
+          background: linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%);
+          -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+                  mask-composite: exclude;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

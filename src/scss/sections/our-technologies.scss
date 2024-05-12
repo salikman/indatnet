@@ -1,0 +1,63 @@
+.ot {
+  background: radial-gradient(74.32% 74.32% at 49.03% 27.56%, #17253F 0%, #010101 49%, #101B2F 100%);
+  
+  &-wrapper {
+    padding: rem(100) 0;
+
+    @include media-mx(991) {
+      padding: rem(50) 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(5);
+    @include adaptiv-font(55, 40);
+    
+    @include media-mx(991) {
+      @include text-gradient(linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%));
+      font-weight: 700;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: rem(30);
+    color: var(--primary-color);
+  }
+
+  &__description {
+    margin-bottom: rem(30);
+    @include adaptiv-font(18, 16);
+    line-height: 1.4;
+  }
+
+  &__img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(30);
+    max-width: rem(740);
+    width: 100%;
+    margin-bottom: rem(50);
+
+    span {
+      font-size: rem(30);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    p {
+      @include adaptiv-font(18, 16);
+      line-height: 1.4;
+
+      a {
+        color: var(--primary-color);
+        text-decoration: underline;
+      }
+    }
+  }
+}

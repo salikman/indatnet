@@ -1,0 +1,52 @@
+.industry {
+  background: radial-gradient(74.32% 74.32% at 49.03% 27.56%, #17253F 0%, #010101 49%, #101B2F 100%);
+  
+  &-wrapper {
+    padding: rem(100) 0;
+
+    @include media-mx(991) {
+      padding: rem(50) 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(30);
+    @include adaptiv-font(55, 40);
+    
+    @include media-mx(991) {
+      @include text-gradient(linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%));
+      font-weight: 700;
+    }
+  }
+
+  &-row {
+    display: grid;
+    grid-template-columns: 40% calc(50% - rem(70));
+    gap: rem(70);
+    margin-bottom: rem(40);
+
+    @include media-mx(767) {
+      grid-template-columns: 1fr;
+      gap: rem(30);
+    }
+  }
+
+  &_img {
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 10/9;
+      object-fit: contain;
+    }
+  }
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    @include adaptiv-font(18, 16);
+    line-height: 1.4;
+  }
+}
