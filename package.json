@@ -33,7 +33,7 @@
 	"bugs": {
 		"url": "https://github.com/StarkElessar/gulp-2022/issues"
 	},
-	"homepage": "https://github.com/StarkElessar/gulp-2022#readme",
+	"homepage": "https://salikman.github.io/indatnet",
 	"devDependencies": {
 		"@archoleat/stylelint-config-extended-scss": "^1.6.9",
 		"autoprefixer": "^10.4.14",
