@@ -65,24 +65,76 @@ new Accordion('.accordion', {
 	collapsedClass: 'open',
 });
 
+// document.addEventListener("DOMContentLoaded", function() {
+// 	// Отримуємо всі посилання з класом 'header__menu'
+// 	var links = document.querySelectorAll('.header__menu a');
+
+// 	// Перебираємо кожне посилання
+// 	links.forEach(function(link) {
+// 			// Додаємо обробник подій 'click' для кожного посилання
+// 			link.addEventListener('click', function(event) {
+// 					// Забороняємо браузеру виконувати дійу за замовчуванням
+// 					// event.preventDefault();
+					
+// 					// Видаляємо клас 'active' з усіх посилань
+// 					links.forEach(function(item) {
+// 							item.classList.remove('active');
+// 					});
+					
+// 					// Додаємо клас 'active' до поточного посилання
+// 					this.classList.add('active');
+// 			});
+// 	});
+// });
 document.addEventListener("DOMContentLoaded", function() {
-	// Отримуємо всі посилання з класом 'header__menu'
 	var links = document.querySelectorAll('.header__menu a');
 
-	// Перебираємо кожне посилання
+	// Функція для визначення поточного якоря на основі положення на сторінці
+	function getCurrentSection() {
+			var scrollPosition = window.scrollY;
+			var sections = document.querySelectorAll('section'); // Змініть цей селектор на відповідний вашим секціям
+			var currentSection = '';
+
+			sections.forEach(function(section) {
+					var sectionTop = section.offsetTop;
+					var sectionHeight = section.clientHeight;
+
+					if (scrollPosition >= sectionTop - sectionHeight / 3) {
+							currentSection = section.getAttribute('id');
+					}
+			});
+
+			return currentSection;
+	}
+
+	// Функція для додавання класу active до відповідного посилання у меню
+	function setActiveLink() {
+			var currentSection = getCurrentSection();
+
+			links.forEach(function(link) {
+					var href = link.getAttribute('href').substring(1); // Відкидаємо символ # в href
+					if (href === currentSection) {
+							link.classList.add('active');
+					} else {
+							link.classList.remove('active');
+					}
+			});
+	}
+
+	// Додаємо обробник подій прокрутки сторінки
+	window.addEventListener('scroll', setActiveLink);
+
+	// Обробник події 'click' для посилань у меню
 	links.forEach(function(link) {
-			// Додаємо обробник подій 'click' для кожного посилання
 			link.addEventListener('click', function(event) {
-					// Забороняємо браузеру виконувати дійу за замовчуванням
 					// event.preventDefault();
-					
-					// Видаляємо клас 'active' з усіх посилань
 					links.forEach(function(item) {
 							item.classList.remove('active');
 					});
-					
-					// Додаємо клас 'active' до поточного посилання
 					this.classList.add('active');
 			});
 	});
+
+	// Встановлюємо початковий стан активного посилання
+	setActiveLink();
 });
