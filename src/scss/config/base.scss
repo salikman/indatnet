@@ -49,6 +49,7 @@
 	position: relative;
 	flex: 1;
 	padding-left: rem(330);
+	overflow: hidden;
 
 	@include media-mx(1366) {
 		padding-left: rem(250);

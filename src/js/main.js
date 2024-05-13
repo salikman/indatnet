@@ -8,7 +8,7 @@
  */
 // import { MousePRLX } from './libs/parallaxMouse'
 // import AOS from 'aos'
-// import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 
 import { BaseHelpers } from './helpers/base-helpers';
 import { PopupManager } from './modules/popup-manager';
@@ -46,7 +46,7 @@ new BurgerMenu().init();
  *  Библиотека для анимаций
  *  документация: https://michalsnik.github.io/aos
  * */
-// AOS.init();
+AOS.init();
 
 /**
  * Параллакс мышей
@@ -63,4 +63,26 @@ new Accordion('.accordion', {
 	shouldOpenAll: false, // true
 	defaultOpen: [], // [0,1]
 	collapsedClass: 'open',
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+	// Отримуємо всі посилання з класом 'header__menu'
+	var links = document.querySelectorAll('.header__menu a');
+
+	// Перебираємо кожне посилання
+	links.forEach(function(link) {
+			// Додаємо обробник подій 'click' для кожного посилання
+			link.addEventListener('click', function(event) {
+					// Забороняємо браузеру виконувати дійу за замовчуванням
+					// event.preventDefault();
+					
+					// Видаляємо клас 'active' з усіх посилань
+					links.forEach(function(item) {
+							item.classList.remove('active');
+					});
+					
+					// Додаємо клас 'active' до поточного посилання
+					this.classList.add('active');
+			});
+	});
 });
