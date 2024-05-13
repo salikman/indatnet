@@ -27,6 +27,10 @@
 			color: var(--primary-color);
 			border-color: var(--primary-color);
 		}
+
+		&:hover {
+			color: var(--primary-color);
+		}
 	}
 
 	// .tabs__panel

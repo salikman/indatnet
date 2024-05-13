@@ -192,6 +192,14 @@
           font-size: rem(14);
         }
 
+        &:hover {
+          @include text-gradient(linear-gradient(88.95deg, #FF66B7 0.01%, #29CCB9 49.49%, #0091FF 100%));
+
+          &:before {
+            background: linear-gradient(88.95deg, #FF66B7 0.01%, #29CCB9 49.49%, #0091FF 100%);
+          }
+        }
+
         &:before {
           content: "";
           position: absolute;

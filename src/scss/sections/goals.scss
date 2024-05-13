@@ -21,9 +21,7 @@
 
   &-tabs {
     .tabs__nav {
-      @include media-mx(991) {
-        
-      }
+      
     }
     .tabs__content {
       width: 100%;
