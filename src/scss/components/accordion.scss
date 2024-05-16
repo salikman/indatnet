@@ -97,5 +97,22 @@
 		@include media-mx(767) {
       padding: 0 rem(20);
     }
+
+		h4 {
+			color: var(--primary-color);
+			@include adaptiv-font(24, 20);
+
+			a {
+				color: var(--primary-color);
+				text-decoration: underline;
+			}
+		}
+
+		p {
+			a {
+				color: var(--primary-color);
+				text-decoration: underline;
+			}
+		}
 	}
 }

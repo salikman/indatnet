@@ -11,14 +11,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: rem(330);
+  width: rem(300);
   height: 100vh;
 	z-index: 50;
   background-color: #111C2F;
   background-image: url('@img/bg-header.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: rem(20) rem(-20);
+  background-position: 0 rem(-20);
 
   @include media-mx(1366) {
     width: rem(250);
@@ -35,10 +35,11 @@
 	&__container {
 		display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: rem(20);
     height: 100%;
-    padding: rem(150) rem(20) rem(100) rem(100);
-    overflow: auto;
+    padding: rem(30) rem(20) rem(30) rem(70);
+    // overflow: auto;
 
     @include media-mx(1366) {
       padding-left: rem(40);
@@ -61,7 +62,8 @@
     height: auto;
 
     @include media-mn(992) {
-      margin-bottom: rem(80);
+      margin-top: rem(100);
+      margin-bottom: rem(50);
     }
   }
 

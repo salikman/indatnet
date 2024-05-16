@@ -16,6 +16,10 @@
 	margin-inline: auto;
 	max-inline-size: rem($max-width-container);
 	padding-inline: rem($main-offset);
+
+	@include media-mx(991) {
+		padding-inline: rem(15);
+	}
 }
 
 // Стили отзывчивых картинок (IBG) ============================================
@@ -48,7 +52,7 @@
 .page {
 	position: relative;
 	flex: 1;
-	padding-left: rem(330);
+	padding-left: rem(300);
 	overflow: hidden;
 
 	@include media-mx(1366) {
