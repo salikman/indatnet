@@ -165,12 +165,14 @@
       }
 
       &__title {
+        text-transform: uppercase;
         @include adaptiv-font(18, 16);
         @include text-gradient(linear-gradient(88.95deg, #29CCB9 0.01%, #0091FF 49.49%, #FF66B7 100%));
         font-weight: 700;
       }
 
       &__description {
+        flex: 1;
         @include adaptiv-font(18, 16);
         line-height: 1.4;
       }
@@ -182,6 +184,7 @@
         justify-content: center;
         width: max-content;
         height: rem(40);
+        margin-top: auto;
         padding: rem(10);
         margin: rem(1);
         text-transform: uppercase;
